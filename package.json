@@ -18,6 +18,7 @@
   "homepage": "https://github.com/sylee0201/myapp#readme",
   "dependencies": {
     "ejs": "^2.5.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0"
   }
 }
