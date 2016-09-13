@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <header>
+    <% include ../partials/header %>
+  </header>
+<div class="posts">
+  <% include partials/top %>
+  <!-- main start-->
+  <!-- vies/post/index.ejs -->
+  <div calss="edit">
+   <h3>Edit Post</h3>
+   <form class="posts_form" action="/posts/<%=data._id%>?_method=put" method="post">
+     <label>Title</label>
+       <input type="text" name="post[title]" value="<%=data.title%>">
+       <label>body</label>
+       <textarea name="post[body]"><%=data.body%></textarea>
+       <button type="submit">submit</button>
+     </form>
+     <a href="/posts/<%=data._id%>"><button>back</button></a>
+  </div>
+  <!-- main end -->
+</div>
+<footer>
+  <% include ../partials/footer %>
+</footer>
+</body>
+</html>

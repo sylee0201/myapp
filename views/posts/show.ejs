@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <header>
+    <% include ../partials/header %>
+  </header>
+<div class="posts">
+  <% include partials/top %>
+  <!-- main start-->
+  <!-- vies/post/index.ejs -->
+  <div class="show">
+   <h3><%=data.title%></h3>
+   <div class="time">created at <br>
+     <%=data.createdAt.toLocaleDateString()%><br>
+     <%=data.createdAt.toLocaleTimeString()%>
+   </div>
+
+   <% if(data.updatedAt){%>
+     <div class="time">updatedAt at <br>
+       <%=data.updatedAt.toLocaleDateString()%><br>
+       <%=data.updatedAt.toLocaleTimeString()%><br>
+     </div>
+   <%}%>
+  <p class="body"><%=data.body%></p>
+  <div class="tools">
+    <a href="/posts/<%=data._id%>/edit"><button>edit</button></a>
+     <form class="btn_delete" action="/posts/<%=data._id%>?_method=delete" method="post">
+       <button type="submit">delete</button>
+     </form>
+ </div>
+ <a href="/posts"><button>back</button></a>
+ </div>
+ </div>
+  <!-- main end -->
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+</body>
+</html>
